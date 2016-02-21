@@ -1,0 +1,16 @@
+# gitignore
+
+assets/avatars/
+content/
+kirby/
+panel/
+site/accounts/
+site/blueprints/
+site/cache/
+site/config/
+site/plugins/
+site/templates/
+thumbs/
+.htaccess
+index.php
+license.md

@@ -1,0 +1,333 @@
+/*
+
+Kirbyxhibit
+Thanks to Kirby Starterkit by Bastian Allgeier / Sascha Lack (http://getkirby.com)
+A tribute to Indexhibit by Daniel Eatock and Jeffery Vaska 
+Big hugs to Greg Cadars
+
+Author:  Julien Bidoret
+URL:     http://accentgrave.net
+Twitter: @julienbidoret
+
+*/
+
+
+
+
+/* Reset
+-------------------------------------------------- */
+*, *:before, *:after {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+article, aside, details, figcaption, figure,
+footer, header, hgroup, main, nav, section, summary {
+    display: block;
+}
+
+
+/* Pix
+-------------------------------------------------- */
+img {
+    display: block;
+    max-width: 100%;
+}
+
+
+/* Links
+-------------------------------------------------- */
+a {
+    color: #00f;
+    text-decoration: none;
+    transition: color .3s, background .3s, border .3s;
+}
+a:hover {
+    color: black;
+}
+
+
+/* Clearfix
+-------------------------------------------------- */
+.cf {
+    overflow:auto;
+}
+
+
+/* Site
+-------------------------------------------------- */
+html {
+    height: 101%;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    }
+body {
+    margin: 0 auto;
+    font-family: sans-serif;
+    font-family: 'Arimo', sans-serif;
+    font-size: 1em;
+    line-height: 1.5;
+    background: #fff;
+    color: #222;
+    overflow-x: hidden;
+    }
+
+.wrap {
+    position: relative;
+    }
+
+
+
+/* Hamburger menu link
+-------------------------------------------------- */
+a.menu-link {
+    display: none;
+    }
+.js a.menu-link {
+    display: block;
+    position: fixed;
+    color: black;
+    text-transform: uppercase;
+    font-size: .75em;
+    transform: translate(-100%, 0%) rotate(270deg);
+    transform-origin: 100% 0 0;
+    padding: 1.5rem 1.75rem 1.5rem 1.5rem;
+    line-height: 1rem;
+    z-index: 8;    
+    }
+/* hamburger icon */ 
+a.menu-link:before {
+    position: absolute;
+    top: 50%;
+    left: .75em;
+    width: .8em;
+    height: .8em;
+    margin-top: -.4em;
+    content: '';
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHMAAABkCAMAAACCTv/3AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAZQTFRFAAAA5ubmSUUG+gAAAAJ0Uk5T/wDltzBKAAAAPklEQVR42uzYQQ0AAAgDseHfNC4IyVoD912WAACUm3uampqampqamq+aAAD+IVtTU1NTU1NT0z8EAFBsBRgAX+kR+Qam138AAAAASUVORK5CYII=);
+    }
+/* black overlay */ 
+.wrap.active:before {
+    content: "";
+    display: block;
+    background: black;
+    opacity: .3;
+    position: fixed;
+    top:0; right:0; left:0; bottom:0;
+    } 
+.wrap.active a.menu-link {
+    left: 12rem;
+    }
+
+
+/* Header
+-------------------------------------------------- */
+.header {
+    padding: 1.5rem;
+    background: white;
+    }
+.header a {
+    color: #000;
+    }
+.js .header {
+    width: 16rem;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    padding-right: 4rem;
+    left: -16rem;
+    }
+.wrap.active .header {
+    left: 0px;
+    }
+
+.logo {
+    font-weight: 700;
+    display: block;
+    margin-bottom: 1.5em;
+    }
+
+
+/* Navigation
+-------------------------------------------------- */
+
+.menu .active:before {
+    content:"→ ";
+    }
+.menu li {
+    list-style: none;
+    }
+.menu > li {
+    margin-bottom: .5em;
+    }
+
+
+/* Headings
+-------------------------------------------------- */
+h1 {
+    font-size: 1em;
+    font-weight: 700;
+    margin-bottom: 1.5em;
+    }
+h2 {
+    font-size: 1em;
+    font-weight: 700;
+    margin-bottom: 1.5em;
+    }
+h3 {
+    font-size: 1em;
+    font-weight: 400;
+    margin-bottom: 1.5em;
+    }
+h4 {
+    font-size: 1em;
+    font-weight: 400;
+    margin-bottom: .5em;
+    }
+h1 a, h2 a, h3 a, h4 a {
+    color: inherit;
+    border: 0 !important;
+    }
+
+
+
+/* Main
+-------------------------------------------------- */
+.main {
+    padding: 1.5rem;
+    }
+/* left white space for menu */
+.js .main {
+    padding-left: 4em;
+    }
+
+.main > :first-child { margin-top: 0;}
+.main hr {
+    margin: 3em 0;
+    height: 1px;
+    width: 3em;
+    background: #000;
+    }
+.main p,
+.main figure,
+.main ul,
+.main ol {
+    margin-bottom: 1.5em;
+    }
+.main a {
+    color: black;
+    border-bottom:1px solid #aaa ;
+    }
+.main a:hover {
+    border-color: #222;
+    }
+
+/* Text blocks */
+.text p,
+.text ul,
+.text ol {
+    max-width: 45em;
+    }
+
+.text ul { 
+    list-style: none;
+    }
+.text ul li:before { 
+    content: "– ";
+    }
+
+.text ol {
+    margin-left: 1em;
+    }
+
+/* Project meta
+-------------------------------------------------- */
+.meta {
+    margin-bottom: 1.5em;
+    }
+.meta li {
+    float: left;
+    list-style: none;
+    margin-right: 2em;
+    }
+.meta li b {
+    font-weight: 400;
+    color: #000;
+    padding-right: .25em;
+    }
+
+
+/* Project teaser
+-------------------------------------------------- */
+.teaser {
+    list-style: none;
+    }
+.teaser li {
+    margin-bottom: 1.5em;
+    list-style: none;
+    }
+.teaser figure { margin: 1.5rem 0;}    
+
+
+/* Next/Prev nav
+-------------------------------------------------- */
+.nextprev {
+    padding: 1em 0;
+    }
+.nextprev a {
+    border: 0;
+    }
+.nextprev .prev + .nextprev .next {
+    margin-left: 1em;
+    }
+
+
+/* Footer
+-------------------------------------------------- */
+.footer {
+    padding: 1rem 1.5rem 6rem 4rem;
+    font-size: .75em;
+    }
+
+.footer a {
+    color: black;
+    border-bottom:1px solid #aaa ;
+    }
+.footer a:hover {
+    border-color: #222;
+    }
+
+
+/* Media queries
+-------------------------------------------------- */
+@media screen and (min-width: 48.25em) {
+
+    a.menu-link {
+        display: none !important;
+        }
+    .header {
+        width: 16rem !important;
+        left: 0 !important;
+        height: 100%;
+        }
+    .main {
+        clear: none;
+        margin-left: 16rem;        
+        }
+    .js .main {
+        padding-left: 1.5rem;
+        }
+    .teaser li {
+        float: left;
+        width: 30%;
+        margin-left: 5%;
+        }
+    .teaser li:first-child {
+        margin-left: 0;
+        }
+    }
